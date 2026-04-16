@@ -1,0 +1,17 @@
+# Platform-specific files
+.DS_Store
+Thumbs.db
+
+# System-generated metadata
+.gemini/
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node modules (just in case)
+node_modules/

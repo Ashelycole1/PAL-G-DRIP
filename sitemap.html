@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sitemap | Pal G Drip House</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .sitemap-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px; }
+    .sitemap-card { background: var(--bg-secondary); overflow: hidden; border: 1px solid var(--border); transition: var(--transition); text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+    .sitemap-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+    .sitemap-img { width: 100%; height: 250px; overflow: hidden; }
+    .sitemap-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+    .sitemap-card:hover .sitemap-img img { transform: scale(1.1); }
+    .sitemap-info { padding: 40px; text-align: center; }
+    .sitemap-name { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 12px; }
+    .sitemap-desc { opacity: 0.5; font-size: 0.85rem; line-height: 1.6; font-weight: 300; letter-spacing: 1px; }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">PAL G <span>DRIP HOUSE</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="collections.html">Collections</a>
+    <a href="contact.html">Contact</a>
+    <a href="sitemap.html" class="active">Sitemap</a>
+    <button id="theme-toggle" class="theme-switch">🌙 Dark Mode</button>
+  </div>
+</nav>
+
+<header class="page-header" style="padding-top: 180px; text-align: center;">
+  <div class="reveal">
+    <div class="section-label">Directory</div>
+    <h1 class="hero-title" style="font-size: clamp(3rem, 10vw, 8rem); color: var(--text-primary);">THE <span style="font-style: italic; color: var(--accent);">PATHWAYS</span></h1>
+  </div>
+</header>
+
+<section id="sitemap">
+  <div class="sitemap-container">
+    <a href="index.html" class="sitemap-card reveal">
+      <div class="sitemap-img"><img src="Rick/28476e56-88a6-4f7c-90cf-0632712e5081.jpg" alt="Home Signature Look"></div>
+      <div class="sitemap-info">
+        <div class="sitemap-name">Home</div>
+        <div class="sitemap-desc" style="text-transform: uppercase;">The Heritage Entry</div>
+      </div>
+    </a>
+    <a href="about.html" class="sitemap-card reveal">
+      <div class="sitemap-img"><img src="./assets/about_graphic.png" alt="About Legacy Luxury Graphic"></div>
+      <div class="sitemap-info">
+        <div class="sitemap-name">About</div>
+        <div class="sitemap-desc" style="text-transform: uppercase;">The Creative Director's Vision</div>
+      </div>
+    </a>
+    <a href="collections.html" class="sitemap-card reveal">
+      <div class="sitemap-img"><img src="Rick/cff02444-64a3-4e08-b184-c9d41737ad63.jpg" alt="Collections Fabric & Detail"></div>
+      <div class="sitemap-info">
+        <div class="sitemap-name">Collections</div>
+        <div class="sitemap-desc" style="text-transform: uppercase;">The Full Archive Catalog</div>
+      </div>
+    </a>
+    <a href="contact.html" class="sitemap-card reveal">
+      <div class="sitemap-img"><img src="./assets/contact_graphic.png" alt="Contact Icon Luxury"></div>
+      <div class="sitemap-info">
+        <div class="sitemap-name">Contact</div>
+        <div class="sitemap-desc" style="text-transform: uppercase;">Bespoke Client Services</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-logo">PAL G</div>
+      <p class="footer-text">Uganda's premier street fashion destination. Handcrafted designs for the modern visionary.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links" style="list-style: none;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="collections.html">Collections</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links" style="list-style: none;">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Returns Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 PAL G DRIP HOUSE. BUILT BY NIWAMANYA RICKY</div>
+    <div class="footer-copy">KAMPALA, UGANDA</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

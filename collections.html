@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Collections | Pal G Drip House</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">PAL G <span>DRIP HOUSE</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="collections.html" class="active">Collections</a>
+    <a href="contact.html">Contact</a>
+    <a href="sitemap.html">Sitemap</a>
+    <button id="theme-toggle" class="theme-switch">🌙 Dark Mode</button>
+  </div>
+</nav>
+
+<header class="page-header" style="padding: 140px 60px 0; text-align: left;">
+  <div class="reveal">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap;">
+      <div>
+        <div class="section-label" style="margin-bottom: 5px;">Season '26</div>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; line-height: 1;">THE COLLECTIONS</h1>
+      </div>
+      <div style="flex-grow: 1; max-width: 500px; position: relative;">
+        <input type="text" id="search-box" placeholder="Search for your style..." style="width: 100%; padding: 15px 25px; border-radius: 50px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-primary); outline: none;">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="shop-section" style="padding-top: 60px;">
+  <div class="category-pills reveal">
+    <button class="cat-pill active" data-cat="all">All Categories</button>
+    <button class="cat-pill" data-cat="Footwear">Sneakers</button>
+    <button class="cat-pill" data-cat="Apparel">Apparel</button>
+    <button class="cat-pill" data-cat="Essentials">Essentials</button>
+    <button class="cat-pill" data-cat="Women">Women</button>
+  </div>
+
+  <div class="shop-container">
+    <aside class="shop-sidebar reveal">
+      <div class="filter-section">
+        <div class="filter-title">Price Range</div>
+        <div style="padding: 10px 0;">
+          <input type="range" min="50000" max="1000000" step="10000" style="width: 100%; accent-color: var(--shop-accent);">
+          <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.8rem; font-weight: 600;">
+            <span>UGX 50k</span>
+            <span>UGX 1.0M</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-title">Star Rating</div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+           <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; cursor: pointer;">
+             <input type="checkbox" checked> ⭐⭐⭐⭐ & up
+           </label>
+        </div>
+      </div>
+
+      <div class="filter-section">
+        <div class="filter-title">Brand</div>
+        <div class="brand-list">
+          <div class="brand-item"><label><input type="checkbox" checked> Pal G Official</label></div>
+          <div class="brand-item"><label><input type="checkbox" checked> Nike Heritage</label></div>
+          <div class="brand-item"><label><input type="checkbox"> Adidas Culture</label></div>
+          <div class="brand-item"><label><input type="checkbox"> New Balance</label></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="product-grid" id="shop-grid">
+      <!-- Products injected via JS -->
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 PAL G DRIP HOUSE. BUILT BY NIWAMANYA RICKY</div>
+    <div class="footer-copy">KAMPALA, UGANDA</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+    const images = [
+      "0a1d506c-36e3-47cb-a170-70c05df7fdcb.jpg", "0fc9726b-5937-4cf5-9c4c-a05858b8c93d.jpg",
+      "10390b56-c3b8-43ae-bd0e-b0aef546549a.jpg", "1047cab6-08df-4a63-ab64-5dacbae65c27.jpg",
+      "118ae280-476e-432a-9b86-10e2ff3d1752.jpg", "1204f0e9-56ac-4267-9fd7-54dd205acb79.jpg",
+      "1304f8c9-de4d-4ce4-8de5-f245d4b48b93.jpg", "170f3a7a-dd10-475f-af49-008bf3af80c9(1).jpg",
+      "170f3a7a-dd10-475f-af49-008bf3af80c9.jpg", "17c0d2e2-687c-419d-95b7-56558b6bc88d.jpg"
+    ]; // Showing first 10 for demo, logic handles all 93
+    
+    // In a real app, I'd loop through all 93 as before
+    const fullImages = [
+      "0a1d506c-36e3-47cb-a170-70c05df7fdcb.jpg", "0fc9726b-5937-4cf5-9c4c-a05858b8c93d.jpg",
+      "10390b56-c3b8-43ae-bd0e-b0aef546549a.jpg", "1047cab6-08df-4a63-ab64-5dacbae65c27.jpg",
+      "118ae280-476e-432a-9b86-10e2ff3d1752.jpg", "1204f0e9-56ac-4267-9fd7-54dd205acb79.jpg",
+      "1304f8c9-de4d-4ce4-8de5-f245d4b48b93.jpg", "170f3a7a-dd10-475f-af49-008bf3af80c9(1).jpg",
+      "170f3a7a-dd10-475f-af49-008bf3af80c9.jpg", "17c0d2e2-687c-419d-95b7-56558b6bc88d.jpg",
+      "1a0f2a5a-0c97-4fc7-bacf-35dce36ccd7e.jpg", "1d859032-ea60-461d-b194-dcf7c4423582.jpg",
+      "1f330933-9582-4e2b-b3f5-950cf539468f.jpg", "22625d4a-0ecf-415b-9a97-af70a30b6e6b.jpg",
+      "231e46bf-237f-4ac0-9e79-1f79df6726be.jpg", "23eaf31e-199b-44f8-a4b4-4ecb7326118e.jpg",
+      "2615435d-0518-48a5-b26e-8e90569eb378.jpg", "26f7930c-73ea-49a3-8529-d2b4a54195b2.jpg",
+      "287cfc65-1719-479c-8798-1e6713509642.jpg", "2fb2f44d-13b8-41e2-ad47-19f58db722fa.jpg",
+      "335e43de-b0d4-4d23-b825-79435f51bcd6.jpg", "33a543ea-f2fe-4855-a6c4-8e2d5e59f41c.jpg",
+      "3755e31b-5002-4f76-a52f-aed32ef591a3.jpg", "3b5323aa-67a9-4051-9f0d-d46a9d79c985.jpg",
+      "3c13cc8a-cc6d-4031-87e9-813c11bb6ced.jpg", "3c572854-e273-4425-b8a8-833a44ba29a8.jpg",
+      "3cfa965f-aece-4b3b-8b2b-91145a704888.jpg", "3d7cdd54-1e20-4198-aa40-7c5300383a97.jpg",
+      "42310ac9-e6cc-43a4-a704-35fc536c2158.jpg", "4480411c-3fad-4532-8647-524cdadea2cc.jpg",
+      "47023513-ce93-4075-a997-c4c3706df616.jpg", "4b187196-9212-470a-a13b-1692ec43a981.jpg",
+      "50839e18-4212-4c93-87d4-30be337e5a6c.jpg", "535a77e6-917c-4f2b-b232-b0d0abb44b99.jpg",
+      "53dbd1fb-66c7-419d-b4f3-bee901c276f2.jpg", "54f4cfd3-e9d4-46c6-be2f-845eeef93358.jpg",
+      "57a9dde9-07b7-42d3-a03c-a2dcc3a3f1f3.jpg", "5d7b1f8b-3fd0-4441-87d0-eeeeeafb855a.jpg",
+      "65f89906-258e-45cc-87c2-f9b5eee2233a.jpg", "663534d2-054a-4cff-a28b-2a3d72e957f2.jpg",
+      "6a7a7655-8f47-423e-8327-35a86e4c2569.jpg", "6c22bf6f-e7bd-4820-9745-a87236dd42d2.jpg",
+      "6f1e6363-94bd-4bc0-bc91-be99bff2fba3.jpg", "707e69bb-a0db-4f0e-846b-690a1203a691.jpg",
+      "74cb4084-a9dd-4d9b-bdaf-e658f9265147.jpg", "78a98977-4f7b-48e2-9cf5-fb79897ee73e.jpg",
+      "7caef29a-8032-4dc9-83cf-e077c05c2409.jpg", "84513ca9-dd92-43a6-a0f2-78e26cad176b.jpg",
+      "85427517-7eb3-4b17-94b2-dc51d46fdae6.jpg", "9079de49-80f8-4c9f-bb02-92099aca11bf.jpg",
+      "91f68144-933b-4032-b352-ae5d5d776954.jpg", "92520ae1-085a-4ddf-ad77-eef69bcb1c90.jpg",
+      "92588a8a-2ed5-43c6-9071-adae6b0e2200.jpg", "928e41e9-e8a0-45b8-ae78-e97cf82d106c.jpg",
+      "977616e3-74e9-4b2b-8f4e-4efb35245e54.jpg", "97cc0219-531e-44ce-9717-22baed4d47c7.jpg",
+      "9826e97f-5b1b-4f66-b6ca-694151a16a10.jpg", "99bef026-8e72-4ac8-86de-5cee4385dc35.jpg",
+      "9a51c574-cea7-4817-a3c3-95dd557c607e.jpg", "9c3ded3b-5e4f-4df8-b35c-4ef2fdf6bdcf.jpg",
+      "a539ce51-2d06-4569-90db-fa5886f3e9bc.jpg", "a5db4f57-3fc8-42a5-ae58-256cd5c14fc6.jpg",
+      "aa32eda1-5ce2-47db-ad62-2c171f944f22.jpg", "aacf94b5-7a44-4183-84b6-1dea46e06385.jpg",
+      "acc3b93d-8e0c-4e09-962b-aa9505707cb6.jpg", "ad4ec29b-f5c8-42b4-b193-da22008140ab.jpg",
+      "b1196fd7-7000-40c1-a6dd-d4a2b862c6dc.jpg", "b1710c9b-25ec-48be-ac96-8df8f7b143d3.jpg",
+      "b4db4b8e-b607-4409-a010-28c9c72cb53b.jpg", "b8ebaf1a-0aef-445c-a56e-b6ceeb0148dc.jpg",
+      "bd292371-dbfd-4123-b19f-59596106b91d.jpg", "c4f2e7aa-463a-4833-904d-b87fb59f6276.jpg",
+      "cee69dd2-b22e-4d24-a988-483a80a64159.jpg", "cf8a64b2-65ec-493d-a631-135ca31eaa58.jpg",
+      "cff02444-64a3-4e08-b184-c9d41737ad63.jpg", "d07194e4-30d2-4f3f-ac74-cd64db66f9d4.jpg",
+      "d5424a3e-58a8-4602-a7fd-afb1ceee0160.jpg", "d77cd4a3-3e61-4225-bba7-f8073dca78a2.jpg",
+      "d7c5ca7c-2359-4992-a21f-620a05814655.jpg", "da254fa8-029e-40f4-84c2-20cbcca397fc.jpg",
+      "e14dab3b-b492-4dbc-b7bc-e02fa0d14e83.jpg", "e156a1e0-7dee-408c-a011-f758d8884c90.jpg",
+      "e2d67179-457e-42f6-832f-21ee99daaf5c.jpg", "e75479f4-991f-4d1c-925b-5d573313c442.jpg",
+      "e83655e2-59c0-4848-ac3a-3c9fa5590a0b.jpg", "e925817f-3647-41ad-a222-3c89bbf60c7c.jpg",
+      "e92bdd35-a868-49c2-8a36-2991b0ff98fd.jpg", "eb550d0a-5556-4543-9e10-cd0c34232679.jpg",
+      "f0816ea4-199a-4409-b48b-a1e36265c88b.jpg", "f302d2c4-67d3-493c-b1d6-3e31ad7aca98.jpg",
+      "fccbbb1b-d23e-4fa2-ad77-75bb10c6cd42.jpg"
+    ];
+
+    const categories = ["Footwear", "Apparel", "Essentials", "Women"];
+    const names = ["High Drip Sneaker", "Kampala Heritage", "Urban Nomad", "Afro-Chic", "Signature Cut", "Neo-Classic", "Vanguard Jacket"];
+    
+    function renderProducts(filter = 'all', query = '') {
+      const grid = document.getElementById('shop-grid');
+      grid.innerHTML = '';
+      
+      const searchTerm = query.toLowerCase().trim();
+      
+      fullImages.forEach((img, i) => {
+        const cat = categories[i % categories.length];
+        const name = names[i % names.length] + " (V" + (i + 1) + ")";
+        
+        // Apply Filters
+        if (filter !== 'all' && cat !== filter) return;
+        if (searchTerm && !name.toLowerCase().includes(searchTerm)) return;
+
+        const priceVal = 85000 + (Math.random() * 250000);
+        const price = "UGX " + priceVal.toLocaleString(undefined, {maximumFractionDigits:0});
+        
+        const card = document.createElement('div');
+        card.className = 'modern-card reveal visible';
+        card.innerHTML = `
+          <div class="card-img-wrap">
+            <img src="Rick/${img}" alt="${name}" loading="lazy">
+            <div class="card-fav">♡</div>
+            ${i % 5 === 0 ? '<div class="badge-top">Top item</div>' : ''}
+          </div>
+          <div class="card-info">
+            <a href="#" class="card-name">${name}</a>
+            <div class="card-footer">
+              <div class="card-price">${price}</div>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Filter Logic
+    document.querySelectorAll('.cat-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelector('.cat-pill.active').classList.remove('active');
+        pill.classList.add('active');
+        const query = document.getElementById('search-box').value;
+        renderProducts(pill.dataset.cat, query);
+      });
+    });
+
+    // Search Logic
+    document.getElementById('search-box').addEventListener('input', (e) => {
+        const currentCat = document.querySelector('.cat-pill.active').dataset.cat;
+        renderProducts(currentCat, e.target.value);
+    });
+
+    renderProducts();
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Pal G Drip House</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+    .contact-form-modern { background: var(--bg-secondary); padding: 60px; border: 1px solid var(--border); }
+    .contact-form-modern input, .contact-form-modern textarea { 
+        width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--border); 
+        padding: 20px 0; color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 1rem; margin-bottom: 30px; outline: none; transition: var(--transition);
+    }
+    .contact-form-modern input:focus, .contact-form-modern textarea:focus { border-bottom-color: var(--accent); }
+    @media (max-width: 1024px) { .contact-container { grid-template-columns: 1fr; gap: 60px; } }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">PAL G <span>DRIP HOUSE</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="collections.html">Collections</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="sitemap.html">Sitemap</a>
+    <button id="theme-toggle" class="theme-switch">🌙 Dark Mode</button>
+  </div>
+</nav>
+
+<header class="page-header" style="padding-top: 180px; text-align: center;">
+  <div class="reveal">
+    <div class="section-label">Get in Touch</div>
+    <h1 class="hero-title">REACH <span style="font-style: italic;">US</span></h1>
+  </div>
+</header>
+
+<section id="contact">
+  <div class="contact-container">
+    <div class="reveal">
+      <div class="section-label">Editorial Support</div>
+      <h2 class="section-title" style="margin-bottom: 40px;">LET'S START <br> A DIALOGUE</h2>
+      <p style="opacity: 0.6; line-height: 2; font-weight: 300; margin-bottom: 60px;">
+        Have a question about our collections, sizing, or a potential collaboration? Our team is here to assist you with a bespoke experience.
+      </p>
+      
+      <div style="display: flex; flex-direction: column; gap: 40px;">
+        <div>
+          <div class="section-label" style="font-size: 0.6rem; letter-spacing: 3px;">Owner & Founder</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 1.8rem;">Niwamanya Ricky</div>
+        </div>
+        <div>
+          <div class="section-label" style="font-size: 0.6rem; letter-spacing: 3px;">Direct Contact</div>
+          <div style="font-size: 1.1rem; opacity: 0.8;">0756260220 / 0788798395<br>+256 756 901773</div>
+        </div>
+        <div>
+          <div class="section-label" style="font-size: 0.6rem; letter-spacing: 3px;">Digital Correspondence</div>
+          <div style="font-size: 1.1rem; opacity: 0.8;">rickyniwamanya3@gmail.com</div>
+        </div>
+        <div>
+          <div class="section-label" style="font-size: 0.6rem; letter-spacing: 3px;">Location</div>
+          <div style="font-size: 1.1rem; opacity: 0.8;">Kampala, Uganda</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-form-modern reveal">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 40px;">Send a Message</h3>
+      <form onsubmit="event.preventDefault(); alert('Message sent successfully. We will respond shortly.');">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Connect</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-logo">PAL G</div>
+      <p class="footer-text">Uganda's premier street fashion destination. Handcrafted designs for the modern visionary.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="collections.html">Collections</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Returns</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 PAL G DRIP HOUSE. BUILT BY NIWAMANYA RICKY</div>
+    <div class="footer-copy">KAMPALA, UGANDA</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
