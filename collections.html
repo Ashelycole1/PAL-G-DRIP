@@ -168,7 +168,7 @@
         if (filter !== 'all' && cat !== filter) return;
         if (searchTerm && !name.toLowerCase().includes(searchTerm)) return;
 
-        const priceVal = 85000 + (Math.random() * 250000);
+        const priceVal = 30000 + (Math.random() * 55000);
         const price = "UGX " + priceVal.toLocaleString(undefined, {maximumFractionDigits:0});
         
         const card = document.createElement('div');
